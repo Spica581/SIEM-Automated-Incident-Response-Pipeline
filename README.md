@@ -60,7 +60,7 @@ This project demonstrates the engineering, deployment, and testing of a centrali
 
 
 
-*(Note: Insert your live dashboard screenshot here showing the logged events!)*
+*![Wazuh Dashboard](Filtered Failed Attempts.png)*
 
 
 
