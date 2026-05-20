@@ -60,7 +60,7 @@ This project demonstrates the engineering, deployment, and testing of a centrali
 
 
 
-*![Wazuh Dashboard](Filtered Failed Attempts.png)*
+*!(Filtered Failed Attempts.png)*
 
 
 
