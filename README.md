@@ -72,8 +72,15 @@ This project demonstrates the engineering, deployment, and testing of a centrali
 
 * **Mechanism:** Upon detecting the brute-force threshold, the server instructs the target client to instantly execute a `netsh-win` script, blocking the malicious source IP address via the Windows Firewall for 600 seconds.
 
-
-
+This command tells Windows to run the "netsh" script when it detects ruleID 60122 also know as a failed login attempt
+```
+<active-response>
+  <command>netsh-win</command>
+  <location>local</location>
+  <rules_id>60122</rules_id>
+  <timeout>600</timeout>
+</active-response>
+```
 ---
 
 
