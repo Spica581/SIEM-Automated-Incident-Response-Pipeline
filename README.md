@@ -8,7 +8,7 @@
 
 This project demonstrates the engineering, deployment, and testing of a centralized security telemetry pipeline using an enterprise-grade SIEM/XDR platform (**Wazuh**). The objective was to design a virtual network infrastructure that streams live endpoint data from a Windows target client, parses security events, and establishes automated defensive countermeasures to actively halt simulated cyber attacks.
 
-
+![Wazuh Threat Hunting Dashboard](Dashboard.png)
 
 ---
 
@@ -60,7 +60,7 @@ This project demonstrates the engineering, deployment, and testing of a centrali
 
 
 
-*!(Filtered Failed Attempts.png)*
+![Wazuh Logs of Failed Attempts](FilteredFailedAttempts.png)
 
 
 
