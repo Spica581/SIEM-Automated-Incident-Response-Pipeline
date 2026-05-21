@@ -83,7 +83,13 @@ This command tells Windows to run the "netsh" script when it detects ruleID 6012
 ```
 ---
 
+## 📈 Phase 4: Advanced Telemetry Ingestion (Microsoft Sysmon Integration)
+* **Objective:** Expand endpoint visibility beyond basic Windows security events to catch advanced execution techniques (like malicious PowerShell activity or ransomware process trees).
+* **Implementation:** Deployed **Microsoft Sysmon** using the industry-standard *SwiftOnSecurity* configuration template to filter out background noise and focus heavily on adversarial tactics.
+* **Pipeline Configuration:** Modified the local agent's `ossec.conf` layer to monitor and ship the hidden `Microsoft-Windows-Sysmon/Operational` event channel.
+* **Validation:** Executed a simulated obfuscated command via PowerShell, verifying that **Sysmon Event ID 1 (Process Creation)** cleanly ingested into the central dashboard—successfully capturing the parent process, process GUID, and full command-line strings.
 
+---
 
 ## 🛠️ Troubleshooting & Engineering Breakthroughs
 
@@ -116,4 +122,9 @@ This command tells Windows to run the "netsh" script when it detects ruleID 6012
 * **Incident Response Automation:** Creating SOAR-like active response policies for threat containment.
 
 * **Systems & Network Architecture:** Diagnosing virtual network layers, subnets, routing, and access controls.
+
+* ### Key Skills Added:
+* Advanced Endpoint Detection & Tracking (EDR/XDR design)
+* Log Channel Modification & XML Configuration
+* Process Lineage & Command-Line Telemetry Analysis
 
