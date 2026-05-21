@@ -91,6 +91,16 @@ This command tells Windows to run the "netsh" script when it detects ruleID 6012
 
 ---
 
+* ### 🔍 Real-World Log Analysis: Tuning & False Positives
+During validation of the Sysmon pipeline, the central manager triggered a **Level 15 Critical Alert (Rule 92213: Executable file dropped in folder commonly used by malware)**, mapping to **MITRE ATT&CK T1105 (Ingress Tool Transfer)**. 
+
+* **Triage Analysis:** Upon inspecting the raw telemetry metadata, the `data.win.eventdata.targetFilename` was identified as:
+  `C:\Users\sebas\AppData\Local\Temp\__PSScriptPolicyTest_xxxxxx.ps1`
+* **Root Cause Determination:** This was triaged as a **False Positive**. Investigation revealed this is a native Windows mechanism where PowerShell generates a temporary file in the `\Temp` directory to validate local script execution policies. 
+* **Engineering Takeaway:** This highlighted the high-fidelity nature of Sysmon Event ID 11 (File Create) and demonstrated the critical need for SIEM baseline tuning to reduce alert fatigue in an enterprise SOC environment.
+
+---
+
 ## 🛠️ Troubleshooting & Engineering Breakthroughs
 
 
