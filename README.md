@@ -1,8 +1,8 @@
-# 🛡️ Building a Specialized SIEM & Automated Incident Response Pipeline
+#  Building a Specialized SIEM & Automated Incident Response Pipeline
 
 
 
-## 📌 Project Overview
+##  Project Overview
 
 
 
@@ -14,7 +14,7 @@ This project demonstrates the engineering, deployment, and testing of a centrali
 
 
 
-## 🏗️ Lab Architecture & Components
+##  Lab Architecture & Components
 
 
 
@@ -32,7 +32,7 @@ This project demonstrates the engineering, deployment, and testing of a centrali
 
 
 
-## 🚀 Phases of Implementation
+##  Phases of Implementation
 
 
 
@@ -121,7 +121,7 @@ During validation of the Sysmon pipeline, the central manager triggered a **Leve
 
 
 
-## 📈 Core Skills Demonstrated
+##  Core Skills Demonstrated
 
 
 
