@@ -40,13 +40,15 @@ This project demonstrates the engineering, deployment, and testing of a centrali
 
 
 * Provisioned and deployed the central Wazuh SIEM virtual appliance.
+  
 ![Virtual Box for Wazuh](Wazuh_OVA_VM.png)
 
 * Engineered the network mapping by transitioning the environment from isolated NAT to **Bridged Adapter mode**, assigning the server a dedicated identity on the local subnet.
+  
 ![Network tab for Wazuh](Wazuh_Network.png)
 
 * Deployed the monitoring agent on the Windows client using administrative command-line parameters (`msiexec`) to link it seamlessly to the manager core.
-* 
+   
 ```
 msiexec /i "C:\Program Files (x86)\ossec-agent\wazuh-agent-4.14.5-1.msi" /q WAZUH_MANAGER="192.168.254.104"
 ```
@@ -76,7 +78,8 @@ msiexec /i "C:\Program Files (x86)\ossec-agent\wazuh-agent-4.14.5-1.msi" /q WAZU
 
 * **Mechanism:** Upon detecting the brute-force threshold, the server instructs the target client to instantly execute a `netsh-win` script, blocking the malicious source IP address via the Windows Firewall for 600 seconds.
 
-This command tells Windows to run the "netsh" script when it detects ruleID 60122 also know as a failed login attempt
+This command tells Windows to run the "netsh" script when it detects ruleID 60122 also know as a failed login attempt:
+
 ```
 <active-response>
   <command>netsh-win</command>
@@ -91,14 +94,17 @@ This command tells Windows to run the "netsh" script when it detects ruleID 6012
 
 * **Objective:** Expand endpoint visibility beyond basic Windows security events to catch advanced execution techniques (like malicious PowerShell activity or ransomware process trees).
 * **Implementation:** Deployed **Microsoft Sysmon** using the industry-standard *SwiftOnSecurity* configuration template to filter out background noise and focus heavily on adversarial tactics.
+  
 ![Successfuly installed Sysmon into system](Sysmon_Integration.png)
 
 * **Pipeline Configuration:** Modified the local agent's `ossec.conf` layer to monitor and ship the hidden `Microsoft-Windows-Sysmon/Operational` event channel.
+  
 ![Code for detecting malicious Powershel activity](Syntax_For_ID100002.png)
 
 ![Short description for newly added rule](Added_New_Rule_ID100002.png)
 
 * **Validation:** Executed a simulated obfuscated command via PowerShell, verifying that **Sysmon Event ID 1 (Process Creation)** cleanly ingested into the central dashboard—successfully capturing the parent process, process GUID, and full command-line strings.
+  
 ![Simulated attack on target Windows Virtual Machine](Example_Attack.png )
 
 ![Rule ID100002 was initiated](Documented_Alert_On_Attack.png)
