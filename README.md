@@ -103,7 +103,7 @@ This command tells Windows to run the "netsh" script when it detects ruleID 6012
 
 ![Short description for newly added rule](Added_New_Rule_ID100002.png)
 
-* **Validation:** Executed a simulated obfuscated command via PowerShell, verifying that **Sysmon Event ID 1 (Process Creation)** cleanly ingested into the central dashboard—successfully capturing the parent process, process GUID, and full command-line strings.
+* **Validation:** Executed a simulated obfuscated command via PowerShell, verifying that **Sysmon Event ID 11 (Process Creation)** cleanly ingested into the central dashboard—successfully capturing the parent process, process GUID, and full command-line strings.
   
 ![Simulated attack on target Windows Virtual Machine](Example_Attack.png )
 
